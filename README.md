@@ -4,19 +4,19 @@
 
 # Règles 🚓
   Ses règles ont été écrite par les ingénieur de la NASA pour des raisons d'efficacité et de bonne écriture de code JavaScript. Ce afin de coder plus safement les plateformes Web 
-  ## Régle 1 📝
-   Aucune fonction ne doit être plus longue que ce qui peut être imprimé sur une seule feuille de papier
+  ## Régle 1 📝 :  Aucune fonction ne doit être plus longue que ce qui peut être imprimé sur une seule feuille de papier
+   Cela ne signifie généralement pas plus de 60 lignes de code par fonction et cette règle convient parfaitement pour le  JavaScript. Le code décomposé permet de mieux comprendre, vérifier et maintenir.
      ![alt text](https://media.makeameme.org/created/papers-papers-everywhere-89ovrp.jpg)
   
-  ## Régle 2
-  Limitez tout le code à des constructions de flux de contrôle très simples - n'utilisez pas d'instructions goto ni de récursion directe ou indirecte
-  * Si vous voulez écrire du code fiable - déposez-en pour en écrire un qui soit cool et qui prévisible à la fois.
+  ## Régle 2 : Limitez tout le code aux constructions de flux de contrôle très simples ✂️
+  Ne pas utilisez d'instructions goto ni de récursion directe ou indirecte, La règle venant du ```C ``` fait merveille. Nous n'utiliserons certainement pas goto ou setjmp dans JS, mais q le problème avec la récursivité est que les analyseurs de code statiques utilisés par la NASA réduisent les risques d’erreur. Les récursions rendent le code moins prévisible pour eux.
+  * Utilisez des constructions qui sont justifiées par la complexité .Si vous voulez écrire du code fiable - déposez-en pour en écrire un qui soit cool et qui prévisible à la fois.
   * Définir le standard de codage et le suivre 
   * Utilisez l'analyse statique pour prendre en charge la norme et réduire les risques de défaillance : ESLint + Beaucoup de plugins, Preset
   * Collecter des matrices : [SonaQube](https://www.sonarqube.org/), [Scrutinizer](https://scrutinizer-ci.com/) , [Plato](https://github.com/es-analysis/plato)
-  * Analyser les types : Flow / Closure Tools / Types
+  * Analyser les types : [Flow](https://flow.org/) / [Google Closure Tools](https://developers.google.com/closure/) / Types
   
-  ## Régle 3 : RESPECT RAM ! 💽
+  ## Régle 3 : RESPECTER LA RAM  💽 ! et n'utilisez pas l'allocation de mémoire dynamique après l'initialisation.
    GC pourrait devenir votre ennemi
    ### Mesure 📏
    [DevTools]() / Timeline
@@ -28,7 +28,7 @@
    * ESLint no-unused-vars
    *  Basculer JavaScript en mode d'allocation de mémoire statique via le regroupement d'objets.
    
-   ## Régle 4 : Mise en commun d'objets
+   ## Régle 4 : Mise en commun d'objets ⚖️
    Pas de nouveaux objets au moment de l'exécution    
    ```javaScript
       const pool = createObjectPool(256);
@@ -53,7 +53,7 @@
 ![alt text](https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif)
 
 Bon à savoir lorsque vous utilisez les performances des transpileurs des fonctionnalités de l’ES6 par rapport à celles de l’ES5.
-  ## Règle 9 
+  ## Règle 9 : Pointer 📍
  L'utilisation de pointeurs doit être spécifiquement restreinte. Un seul niveau de déréférencement est autorisé .   Les pointeurs sur les fonctions ne sont pas autorisés . Tou en sachant que JavaScript fonctionne de base avec les pointeurs.
  * Chaînes d'appel ( Niveau de référence )
  * [LoD](https://en.wikipedia.org/wiki/Level_of_detail) = Loose Compling
@@ -67,10 +67,10 @@ Bon à savoir lorsque vous utilisez les performances des transpileurs des foncti
  
   Tout le code doit être compilé le premier jour de développement, avec tous les avertissements du compilateur activés.  Ne stockez pas les avertissements, ne remettez pas à plus tard les correctifs, gardez le code propre et perfectionniste en vous.
   
-  Si le code est au rouge ⚠️
-   * Ne panique pas
+  Si le code est au rouge 🔥⚠️
+   * Ne panique pas 🧘🏿‍♂️
    * Simplement, prioriser
-   * Refactoriser et ajouter des tests pièce par pièce
+   * Refactoriser et ajouter des tests pièce par pièce 🧩
 
 
  ### ...Petit pas pour les développeurs mais ... Grand pas pour que la plate-forme Web soit perçue comme fiable ♻️
