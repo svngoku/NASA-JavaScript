@@ -2,9 +2,9 @@
 # NASA JavaScript     ![alt text](https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg)
   Étant donné que la demande en logiciels Web augmente constamment et que des tâches plus critiques sont confiées à JavaScript, appliquons les directives de codage de la NASA aux applications JavaScript / HTML pour des performances, une fiabilité et un monde meilleur.
 
-# Règles
+# Règles 🚓
   Ses règles ont été écrite par les ingénieur de la NASA pour des raisons d'efficacité et de bonne écriture de code JavaScript. Ce afin de coder plus safement les plateformes Web 
-  ## Régle 1
+  ## Régle 1 📝
    Aucune fonction ne doit être plus longue que ce qui peut être imprimé sur une seule feuille de papier
      ![alt text](https://media.makeameme.org/created/papers-papers-everywhere-89ovrp.jpg)
   
@@ -16,11 +16,11 @@
   * Collecter des matrices : [SonaQube](https://www.sonarqube.org/), [Scrutinizer](https://scrutinizer-ci.com/) , [Plato](https://github.com/es-analysis/plato)
   * Analyser les types : Flow / Closure Tools / Types
   
-  ## Régle 3 : RESPECT RAM ! 
+  ## Régle 3 : RESPECT RAM ! 💽
    GC pourrait devenir votre ennemi
-   ### Mesure
+   ### Mesure 📏
    [DevTools]() / Timeline
-   ### Comparer
+   ### Comparer 🔬
    [DevTools]() / [Profile]() / [Takeheap snapshot]()
   ### Resume 
    * Gérez votre variable avec respect. Déclarez en haut de la portée pour augmenter la visibilité. ESLint vars-on-top. Trier pour la prévisibilité sort-vars
@@ -35,7 +35,7 @@
       let object = pool.getObject();
       pool.releaseObject(object);
    ```
-   ## Régle 5 : Faire de bons tests || Test Well
+   ## Régle 5 : Faire de bons tests || Test Well 🔍
    La densité des assertions du code doit être en moyenne d'au moins deux assertions par fonction . 
     * Plus la densité de test est élevée, moins vous obtenez de défauts
     * La quantité minimale de test est 2 par fonctions .
@@ -43,13 +43,13 @@
     * Mesurer la couverture, mais attention, une couverture à 100% ne signifie pas nécessairement que vous avez un code bien testé.
     
   ## Règle 6 : Pas d'état partagé || No shared state ( [ESLint pureness plugin](https://github.com/rom-melnyk/eslint-plugin-pureness))
-   L'objet des données doit être déclaré au niveau de portée le plus petit possible
+   Les objets de données doivent être déclarés au niveau de portée le plus petit possible.
    
-  ## Règle 7
+  ## Règle 7 ( Règle à sauter )
    La valeur de retour de la fonction non vide doit être vérifiée par chaque fonction appelante et la validité des paramètres doit être vérifiée à l'intérieur de chaque fonction.
    
-  ## Règle 8 
-   L'utilisation du pré-processeur doit être limitée à l'inclusion de fichiers d'en-tête. Gardez à l'esprit que le code que vous écrivez n'est pas le code que vous exécutez !  
+  ## Règle 8 (L'utilisation du pré-processeur doit être limitée à l'inclusion de fichiers d'en-tête. )
+   JavaScript est transpilé par chaque navigateur, nous devons donc surveiller les performances de notre code .Gardons à l'esprit que le code que vous écrivez n'est pas le code que vous exécutez !  
 ![alt text](https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif)
 
 Bon à savoir lorsque vous utilisez les performances des transpileurs des fonctionnalités de l’ES6 par rapport à celles de l’ES5.
