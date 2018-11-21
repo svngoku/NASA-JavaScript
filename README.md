@@ -1,2 +1,58 @@
-# NASA-JavaScript
-Applying NASA coding standards to JavaScript
+# NASA JavaScript ![alt text](https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg)
+  Étant donné que la demande en logiciels Web augmente constamment et que des tâches plus critiques sont confiées à JavaScript, appliquons les directives de codage de la NASA aux applications JavaScript / HTML pour des performances, une fiabilité et un monde meilleur.
+
+# Règles
+  Les regles ont été obtenus lors d'une conférence tenu par Jonh Doe
+  ## Régle 1
+   Aucune fonction ne doit être plus longue que ce qui peut être imprimé sur une seule feuille de papier
+     ![alt text](https://media.makeameme.org/created/papers-papers-everywhere-89ovrp.jpg)
+  
+  ## Régle 2
+  Limitez tout le code à des constructions de flux de contrôle très simples - n'utilisez pas d'instructions goto ni de récursion directe ou indirecte
+  * Si vous voulez écrire du code fiable - déposez-en pour en écrire un qui soit cool et qui soit prévisible.
+  * Définir le standard de codage et le suivre
+  * Utilisez l'analyse statique pour prendre en charge la norme et réduire les risques de défaillance : ESLint + Beaucoup de plugins, preset
+  * Collect metrcis : [SonaQube](https://www.sonarqube.org/), [Scrutinizer](https://scrutinizer-ci.com/) , [Plato](https://github.com/es-analysis/plato)
+  * Analyser les types : Flow / Closure Tools / Types
+  
+  ## Régle 3 : RESPECT RAM ! 
+   ```GC pourrait devenir votre ennemi ```
+   ### Mesure
+   DevTools / Timeline
+   ### Comparer
+   DevTools / Profile / Takeheap snapshot
+   
+   * Gérez votre variable avec respect. Déclarez en haut de la portée pour augmenter la visibilité. ESLint vars-on-top. Trier pour la prévisibilité sort-vars
+   *  Surveillez les liens mémoire, nettoyez les écouteurs et les variables lorsque vous n'en avez plus besoin .
+   * ESLint no-unused-vars
+   *  Basculer JavaScript en mode d'allocation de mémoire statique via le regroupement d'objets.
+   
+   ## Régle 4 : Mise en commun d'objets
+   Pas de nouveaux objets au moment de l'exécution    
+    ``` const pool = createObjectPool(256);
+        let object = pool.getObject();
+        pool.releaseObject(object);
+    ```
+   ## Régle 5 : Test Well
+   La densité des assertions du code doit être en moyenne d'au moins deux assertions par fonction . 
+    * Plus la densité de test est élevée, moins vous obtenez de défauts
+    * La quantité minimale de test est 2 par fonctions .
+    * Surveillez les anomalies dans l'état du système pendant l'exécution. Générer et gérer des erreurs en cas de pannes critiques.
+    * Mesurer la couverture, mais attention, une couverture à 100% ne signifie pas nécessairement que vous avez un code bien testé.
+    
+  ## Règle 6 : Pas d'état partagé ( [ESLint pureness plugin](https://github.com/rom-melnyk/eslint-plugin-pureness))
+   L'objet de données doit être déclaré au niveau de portée le plus petit possible
+   
+  ## Règle 7
+   La valeur de retour de la fonction non vide doit être vérifiée par chaque fonction appelante et la validité des paramètres doit être vérifiée à l'intérieur de chaque fonction.
+   
+  ## Règle 8 
+   L'utilisation du pré-processeur doit être limitée à l'inclusion de fichiers d'en-tête. Gardez à l'esprit que le code que vous écrivez n'est pas le code que vous exécutez !  
+![alt text](https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif)
+
+Bon à savoir lorsque vous utilisez les performances des transpileurs des fonctionnalités de l’ES6 par rapport à celles de l’ES5.
+  ## Règle 9 
+ L'utilisation de pointeurs doit être spécifiquement restreinte. Un seul niveau de déréférencement est autorisé .   Les pointeurs sur les fonctions ne sont pas autorisés . Tou en sachant que JavaScript fonctionne de base avec les pointeurs.
+ 
+
+   
