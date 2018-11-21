@@ -1,4 +1,5 @@
-# NASA JavaScript ![alt text](https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg)
+
+# NASA JavaScript     ![alt text](https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg)
   Étant donné que la demande en logiciels Web augmente constamment et que des tâches plus critiques sont confiées à JavaScript, appliquons les directives de codage de la NASA aux applications JavaScript / HTML pour des performances, une fiabilité et un monde meilleur.
 
 # Règles
@@ -16,7 +17,7 @@
   * Analyser les types : Flow / Closure Tools / Types
   
   ## Régle 3 : RESPECT RAM ! 
-   ```GC pourrait devenir votre ennemi ```
+   GC pourrait devenir votre ennemi
    ### Mesure
    DevTools / Timeline
    ### Comparer
@@ -29,10 +30,11 @@
    
    ## Régle 4 : Mise en commun d'objets
    Pas de nouveaux objets au moment de l'exécution    
-    ``` const pool = createObjectPool(256);
-        let object = pool.getObject();
-        pool.releaseObject(object);
-    ```
+   ```javaScript
+      const pool = createObjectPool(256);
+      let object = pool.getObject();
+      pool.releaseObject(object);
+   ```
    ## Régle 5 : Test Well
    La densité des assertions du code doit être en moyenne d'au moins deux assertions par fonction . 
     * Plus la densité de test est élevée, moins vous obtenez de défauts
@@ -53,6 +55,23 @@
 Bon à savoir lorsque vous utilisez les performances des transpileurs des fonctionnalités de l’ES6 par rapport à celles de l’ES5.
   ## Règle 9 
  L'utilisation de pointeurs doit être spécifiquement restreinte. Un seul niveau de déréférencement est autorisé .   Les pointeurs sur les fonctions ne sont pas autorisés . Tou en sachant que JavaScript fonctionne de base avec les pointeurs.
- 
+ * Chaînes d'appel ( Niveau de référence )
+ * [LoD](https://en.wikipedia.org/wiki/Level_of_detail) = Loose Compling
+      ```javaScript
+      Dog.body.legs.run();
+            vs
+      Dog.run();
+   ```
+ * Call chains
+ ## Règle 10
+  Tout le code doit être compilé le premier jour de développement, avec tous les avertissements du compilateur activés.
+    Si le code est au rouge ⚠️
+     - Ne panique pas
+     - Simplement, prioriser
+     - Refactoriser et ajouter des tests pièce par pièce
 
-   
+
+ ### ...Petit pas pour les développeurs mais ... Grand pas pour que la plate-forme Web soit perçue comme fiable ♻️
+ ![alt text](https://img.purch.com/w/660/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA3Ny85NDgvb3JpZ2luYWwvbW9vbi1sYW5kaW5nLmpwZw==)
+  
+ 
