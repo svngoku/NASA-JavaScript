@@ -29,7 +29,8 @@
    *  Basculer JavaScript en mode d'allocation de mémoire statique via le regroupement d'objets.
    
    ## Régle 4 : Mise en commun d'objets ⚖️
-   Pas de nouveaux objets au moment de l'exécution    
+   L'analyse statique est plus efficace et permet d'éviter les boucles infinies. Si la limite est dépassée, la fonction retourne une erreur et prend le système en état d'échec. Pour la peine pas de nouveaux objets au moment de l'exécution et toutes les boucles doivent avoir une limite supérieure fixe.
+   
    ```javaScript
       const pool = createObjectPool(256);
       let object = pool.getObject();
@@ -43,8 +44,8 @@
    * Surveillez les anomalies dans l'état du système pendant l'exécution. Générer et gérer des erreurs en cas de pannes critiques.
    * Mesurer la couverture, mais attention, une couverture à 100% ne signifie pas nécessairement que vous avez un code bien testé.
     
-  ## Règle 6 : Pas d'état partagé || No shared state ( [ESLint pureness plugin](https://github.com/rom-melnyk/eslint-plugin-pureness))
-   Les objets de données doivent être déclarés au niveau de portée le plus petit possible.
+  ## Règle 6 : Pas d'état partagé, les objets de données doivent être déclarés au niveau de portée le plus petit possible. ( [ESLint pureness plugin](https://github.com/rom-melnyk/eslint-plugin-pureness))
+   L'intention derrière cette règle est simple: conserver les données dans le champ privé et éviter les accès non autorisés. Cela semble générique, intelligent et facile à suivre.
    
   ## Règle 7 ( Règle à sauter )
    La valeur de retour de la fonction non vide doit être vérifiée par chaque fonction appelante et la validité des paramètres doit être vérifiée à l'intérieur de chaque fonction.
@@ -56,7 +57,7 @@
 Bon à savoir lorsque vous utilisez les performances des transpileurs des fonctionnalités de l’ES6 par rapport à celles de l’ES5.
   ## Règle 9 : Pointer 📍
   
- L'utilisation de pointeurs doit être spécifiquement restreinte. Un seul niveau de déréférencement est autorisé .   Les pointeurs sur les fonctions ne sont pas autorisés . Tou en sachant que JavaScript fonctionne de base avec les pointeurs.
+ L'utilisation de pointeurs doit être spécifiquement restreinte. Un seul niveau de déréférencement est autorisé .   Les pointeurs sur les fonctions ne sont pas autorisés . Tout en sachant que JavaScript fonctionne de base avec les pointeurs.  C’est la règle ou les développeurs JavaScript ne peuvent rien obtenir 😅
  * Chaînes d'appel ( Niveau de référence )
  * [LoD](https://en.wikipedia.org/wiki/Level_of_detail) = Loose Compling
       ```javaScript
@@ -64,7 +65,6 @@ Bon à savoir lorsque vous utilisez les performances des transpileurs des foncti
             vs
       Dog.run();
    ```
- * Call chains
  ## Règle 10
  
   Tout le code doit être compilé le premier jour de développement, avec tous les avertissements du compilateur activés.  Ne stockez pas les avertissements, ne remettez pas à plus tard les correctifs, gardez le code propre et perfectionniste en vous.
@@ -72,7 +72,7 @@ Bon à savoir lorsque vous utilisez les performances des transpileurs des foncti
   Si le code est au rouge 🔥⚠️
    * Ne panique pas 🧘🏿‍♂️
    * Simplement, prioriser
-   * Refactoriser et ajouter des tests pièce par pièce 🧩
+   * Refactoriser et ajouter des tests pièce par pièce 🎨
 
 
  ### ...Petit pas pour les développeurs mais ... Grand pas pour que la plate-forme Web soit perçue comme fiable ♻️
