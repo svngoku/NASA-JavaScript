@@ -18,10 +18,10 @@
   
   ## Régle 3 : RESPECTER LA RAM  💽 ! et n'utilisez pas l'allocation de mémoire dynamique après l'initialisation.
    GC pourrait devenir votre ennemi
-   ### Mesure 📏
+   ### Mesurer 📏
    [DevTools]() / Timeline
    ### Comparer 🔬
-   [DevTools]() / [Profile]() / [Takeheap snapshot]()
+   [DevTools](https://developers.google.com/web/tools/chrome-devtools/javascript/) / [Profile]() / [Takeheap snapshot](https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots)
   ### Resume 
    * Gérez votre variable avec respect. Déclarez en haut de la portée pour augmenter la visibilité. ESLint vars-on-top. Trier pour la prévisibilité sort-vars
    *  Surveillez les liens mémoire, nettoyez les écouteurs et les variables lorsque vous n'en avez plus besoin .
@@ -36,11 +36,12 @@
       pool.releaseObject(object);
    ```
    ## Régle 5 : Faire de bons tests || Test Well 🔍
-   La densité des assertions du code doit être en moyenne d'au moins deux assertions par fonction . 
-    * Plus la densité de test est élevée, moins vous obtenez de défauts
-    * La quantité minimale de test est 2 par fonctions .
-    * Surveillez les anomalies dans l'état du système pendant l'exécution. Générer et gérer des erreurs en cas de pannes critiques.
-    * Mesurer la couverture, mais attention, une couverture à 100% ne signifie pas nécessairement que vous avez un code bien testé.
+  La densité des assertions du code doit être en moyenne d'au moins deux assertions par fonction . Le plus simple pour cette approche est la mise en place des tests unitaires qui s'exécutent au moment de l'exécution.
+  
+   * Plus la densité de test est élevée, moins vous obtenez de défauts
+   * La quantité minimale de test est 2 par fonctions .
+   * Surveillez les anomalies dans l'état du système pendant l'exécution. Générer et gérer des erreurs en cas de pannes critiques.
+   * Mesurer la couverture, mais attention, une couverture à 100% ne signifie pas nécessairement que vous avez un code bien testé.
     
   ## Règle 6 : Pas d'état partagé || No shared state ( [ESLint pureness plugin](https://github.com/rom-melnyk/eslint-plugin-pureness))
    Les objets de données doivent être déclarés au niveau de portée le plus petit possible.
@@ -54,6 +55,7 @@
 
 Bon à savoir lorsque vous utilisez les performances des transpileurs des fonctionnalités de l’ES6 par rapport à celles de l’ES5.
   ## Règle 9 : Pointer 📍
+  
  L'utilisation de pointeurs doit être spécifiquement restreinte. Un seul niveau de déréférencement est autorisé .   Les pointeurs sur les fonctions ne sont pas autorisés . Tou en sachant que JavaScript fonctionne de base avec les pointeurs.
  * Chaînes d'appel ( Niveau de référence )
  * [LoD](https://en.wikipedia.org/wiki/Level_of_detail) = Loose Compling
